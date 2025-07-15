@@ -1,0 +1,112 @@
+body {
+  background: linear-gradient(to bottom, #dfffdc, #f5f5dc);
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.gerbera {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: pulse 6s infinite ease-in-out;
+}
+
+.petal {
+  position: absolute;
+  width: 30px;
+  height: 70px;
+  background: radial-gradient(circle at center, #ff69b4, #ff1493);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  animation: sway 3s infinite ease-in-out;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #6b3e26;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  box-shadow: 0 0 10px #00000050;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.flor-container .gerbera {
+  position: absolute;
+  animation: flotar 4s ease-in-out infinite;
+}
+
+/* 🌸 Botón personalizado */
+.btn-flor {
+  background-color: #a3d977;
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-flor:hover {
+  background-color: #91c862;
+  transform: scale(1.05);
+}
+
+.btn-flor:active {
+  animation: latido 0.4s ease;
+}
+
+@keyframes latido {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .gerbera {
+    transform: scale(0.7);
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #crearFlores {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gerbera {
+    transform: scale(0.5);
+  }
+}
