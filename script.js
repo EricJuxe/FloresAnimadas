@@ -47,7 +47,7 @@ document.getElementById('crearFlores').addEventListener('click', () => {
   const ancho = contenedor.offsetWidth;
   const alto = contenedor.offsetHeight;
 
-  let total = 30;
+  let total = 50;
   let count = 0;
   const posiciones = [];
 
